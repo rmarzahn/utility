@@ -1,0 +1,49 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+<div id="homescreen">
+    <img src="\static\bilder\newsletter.jpg" width="100%">
+        <div id="homeblock">
+            <h3>"Life's too short</h3>
+            <h4>to wear boring clothes."</h4>
+            <h5>CUSHNIE ET OCHS</h5>
+        </div>
+</div>
+
+<div class='contentcontainer'>
+<div class="post">
+<h6><b>SignUp for Utility Newsletter</b></h6>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p class="seite"><b>Du möchtes über die Classics und Must Haves im Bereich Fashion immer up-to-date sein?</b></p>
+    <p>Dann registriere dich für den Utility-Newsletter. Dieser hält dich über alle wichtigen Informationen auf dem Laufenden - verpasse so keinen aktuellen Trend mehr! Erhalte zusätzlich exklusive Gutscheine und Rabattcodes nur für Newsletter-Abonnenten und spare bei deinem nächsten Shopping-Trip.</p>
+    <div class="site-form">
+    {% if messages %}
+        {% for message in messages %}
+            <div {% if message.tags %} class="{{ message.tags }}" {% endif %} role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    {{ message }}
+            </div>
+        {% endfor %}
+    {% else %}   
+    <form method="POST">
+        {% csrf_token %}
+        <div class="input-group">
+            {{ form }}
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Subscribe</button>
+            </span>
+        </div>
+    </form>
+    {% endif %}
+    </div>
+    <br>
+    <p><b>Du möchtest nicht mehr Teil des Utility-Newsletters sein?</b></p>
+    <p>Unter folgendem Link kannst du deine E-Mail Adresse vom Newsletter entfernen: <a href="{% url 'newsletter_unsubscribe' %}">UNSUBSCRIBE</a></p>
+</div>
+</div>
+
+{% endblock %}

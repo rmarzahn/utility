@@ -1,0 +1,45 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+<div id="homescreen">
+    <img src="\static\bilder\newsletter.jpg" width="100%">
+        <div id="homeblock">
+            <h3>"Life's too short </h3>
+            <h4>to wear boring clothes."</h4>
+            <h5>CUSHNIE ET OCHS</h5>
+        </div>
+</div>
+
+<div class="contentcontainer">
+<div class="post">
+<div>
+    <h6><b>Unsubscribe from Utility Newsletter</b></h6>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% if messages %}
+        {% for message in messages %}
+            <div {% if message.tags %} class="{{ message.tags }}" {% endif %} role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    {{ message }}
+            </div>
+        {% endfor %}
+    {% else %}
+    <form method="POST">
+        {% csrf_token %}
+        <div class="input-group">
+            {{ form }}
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Unsubscribe</button>
+            </span>
+        </div>
+    </form>
+    {% endif %}
+</div>
+</div>
+</div>
+
+{% endblock %}

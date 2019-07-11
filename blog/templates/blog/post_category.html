@@ -1,0 +1,45 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+        {% block content %}
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="contentcontainer">
+            <div class="row">
+                <div class="col-md-8">
+                    {% for post in posts %}
+                        <div class="post">
+                            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                            <div class="date">
+                                <p>veröffentlicht: {{ post.published_date }} (Autor: {{ post.author }})</p>
+                            </div>
+                            <img src="{{Post.thumb.url}}">
+                            <p>{{ post.snippet }}</p>
+                            <p><b>CATEGORY:</b> {{ post.category }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-4">
+                    <div class="sidebar">
+                        <img class="sideimg" src="\static\bilder\home.jpeg" width="100%">  
+                        <div>
+                            <br>
+                            <br>
+                            <br>
+                            <h4>Utility Blog</h4>
+                            <p><b>PLEASE SIGN UP OR LOGIN IN IF YOU WANT TO CREATE A POST OR AN EVENT.</b></p>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+                        </div>                      
+                    </div>                    
+                </div>
+            </div>
+        </div>
+
+        {% endblock %}

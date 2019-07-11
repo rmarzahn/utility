@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="abstand"></div>
+    <div class="post">
+        <h6><b>New Blogpost</b></h6>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form class="post-form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+    </div>
+{% endblock %}

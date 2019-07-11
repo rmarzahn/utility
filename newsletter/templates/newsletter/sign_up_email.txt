@@ -1,0 +1,1 @@
+Willkommen zum Utility Newsletter! Vielen Dank für die Registrierung. Wenn du dich vom Newsletter abmelden möchtest, besuche http:/127.0.0.1:8000/newsletter/unsubscribe .

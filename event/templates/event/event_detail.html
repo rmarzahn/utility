@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+        {% block content %}
+        <div class="abstand"></div>
+        <div class="post">
+            <h6><b>{{event.title }}</b></h6>
+            <br>
+            <br>
+            <br>
+            <div class="date">
+                Veranstaltungsdatum: {{ event.date }}
+            </div>
+            <p>{{ event.text|linebreaksbr }}</p>
+            <p>Adresse: {{ event.street_number }}, {{ event.postalcode }} {{ event.city }}</p>
+        </div>
+        {% endblock %}

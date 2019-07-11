@@ -1,0 +1,55 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div id="homescreen">
+    <img src="\static\bilder\event.jpg" width="100%">
+        <div id="homeblock">
+            <h3>"Fashion is the daily air and</h3>
+            <h4>it changes with all events."</h4>
+            <h5>DIANA VREELAND</h5>
+        </div>
+</div>
+
+<div class='contentcontainer'>
+    <div class='row'>
+        <div class='col-md-8'>
+        {% if user.is_authenticated %}
+        <div class='create'>
+            <p>If you want to create an Event, please click here:<b><a href="{% url 'event_create' %}">CREATE EVENT</a></b></p>
+        </div>
+        {% endif %}
+
+        {% for event in events %}
+        <div class='post'>
+            <div class='event'>
+                <h2><b>&nbsp;{{ event.title }}</b></a></h2>
+                <div class="date">
+                    <p>{{ event.date }} um {{ event.time }}Uhr</p>
+                </div>
+                <p><b>ADDRESS:</b> {{ event.street_number }}, {{ event.postalcode }} {{ event.city }}</p>
+                <p> {{event.text}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-md-4">
+            <div class="sidebar">
+                <img class="sideimg" src="\static\bilder\event.jpg" width="100%">  
+                <div>
+                    <br>
+                    <br>
+                    <br>
+                    <h4><b>Utility Event</b></h4>
+                    <p><b>PLEASE SIGN UP OR LOGIN IN IF YOU WANT TO CREATE A POST OR AN EVENT.</b></p>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+                </div>                      
+            </div>                    
+    </div>
+</div>
+
+
+
+{% endblock %}
