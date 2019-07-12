@@ -1,5 +1,4 @@
 from django.conf import settings
-from utility import local_settings
 from django.contrib import messages
 from django.shortcuts import render
 from django.core.mail import send_mail, EmailMultiAlternatives
@@ -26,14 +25,14 @@ def newsletter_signup(request):
             'Vielen Dank für deine Registrierung zum Utility-Newsletter!', 
             'alert alert-success alert-dismissible')
             subject = "Dankeschön: Registrierung zum Utility-Newsletter!"
-            #from_email = local_settings.EMAIL_HOST_USER
-            #to_email = [instance.email]
-            #with open(settings.BASE_DIR + "/newsletter/templates/newsletter/sign_up_email.txt") as f:
-            #    signup_message = f.read()
-            #message = EmailMultiAlternatives(subject=subject, body=signup_message, from_email=from_email, to=to_email)
-            #html_template = get_template("newsletter/sign_up_email.html").render()
-            #message.attach_alternative(html_template, "text/html")
-            #message.send()
+            from_email = settings.EMAIL_HOST_USER
+            to_email = [instance.email]
+            with open(settings.BASE_DIR + "/newsletter/templates/newsletter/sign_up_email.txt") as f:
+                signup_message = f.read()
+            message = EmailMultiAlternatives(subject=subject, body=signup_message, from_email=from_email, to=to_email)
+            html_template = get_template("newsletter/sign_up_email.html").render()
+            message.attach_alternative(html_template, "text/html")
+            message.send()
 
     context = {
         'form' : form,
@@ -52,15 +51,15 @@ def newsletter_unsubscribe(request):
             messages.success(request, 
             'Deine E-Mail wurde entfernt.',
             "alert alert-success alert-dismissible")
-            #subject = "Abmeldung: Utility-Newsletter"
-            #from_email = local_settings.EMAIL_HOST_USER
-            #to_email = [instance.email]
-            #with open(settings.BASE_DIR + "/newsletter/templates/newsletter/unsubscribe_email.txt") as f:
-            #    signup_message = f.read()
-            #message = EmailMultiAlternatives(subject=subject, body=signup_message, from_email=from_email, to=to_email)
-            #html_template = get_template("newsletter/unsubscribe_email.html").render()
-            #message.attach_alternative(html_template, "text/html")
-            #message.send()
+            subject = "Abmeldung: Utility-Newsletter"
+            from_email = settings.EMAIL_HOST_USER
+            to_email = [instance.email]
+            with open(settings.BASE_DIR + "/newsletter/templates/newsletter/unsubscribe_email.txt") as f:
+                signup_message = f.read()
+            message = EmailMultiAlternatives(subject=subject, body=signup_message, from_email=from_email, to=to_email)
+            html_template = get_template("newsletter/unsubscribe_email.html").render()
+            message.attach_alternative(html_template, "text/html")
+            message.send()
         else:
             messages.warning(request, 
             'Deine E-Mail ist nicht in der Datenbank.', 
