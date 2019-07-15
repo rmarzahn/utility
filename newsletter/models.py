@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 class NewsletterUser(models.Model):
-    name = models.CharField(max_length=25, blank=True, null=True)
-    email = models.EmailField()
+    name = models.CharField(max_length=25, blank=True, null=True, verbose_name = 'Benutzername (optional)')
+    email = models.EmailField(verbose_name = 'E-Mail')
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

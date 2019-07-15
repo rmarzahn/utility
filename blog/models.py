@@ -6,7 +6,7 @@ from django.urls import reverse
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, unique=True, default=timezone.now)
+    slug = models.SlugField(max_length=100, unique=True, default=timezone.now, help_text = 'Slug bitte identisch zum Name der Category setzen')
 
     class Meta:
         ordering = ('name',)
@@ -27,7 +27,7 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-    thumb = models.ImageField(blank=True, null=True)
+    thumb = models.ImageField(blank=True, null=True, verbose_name = 'Image')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     
     def publish(self):
