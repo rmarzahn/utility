@@ -11,12 +11,9 @@ from . import forms
 
 def post_category(request, category_slug):
     categories = Category.objects.all()
-    #post = Post.objects.filter(status='published')
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
         posts = Post.objects.filter(category=category).order_by('-published_date')
-    #template = 'blog/category/post_category.html'
-    #context = {'categories':categories, 'posts':posts, 'category':category}
     return render(request, 'blog/post_category.html', {'posts':posts})
 
 
