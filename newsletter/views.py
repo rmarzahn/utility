@@ -72,23 +72,4 @@ def newsletter_unsubscribe(request):
     return render(request, template, context)
 
 
-#def control_newsletter(request):
-    #form = NewsletterCreationForm(request.POST or None)
-
-    #if form.is_valid():
-        #instance = form.save()
-        #newsletter = Newsletter.objects.get(id=instance.id)
-        #if newsletter.status == "Published":
-            #subject = newsletter.subject
-            #body = newsletter.body
-            #from_email = local_settings.EMAIL_HOST_USER
-            #for email in newsletter.email.all():
-                #send_mail(subject=subject, from_email=from_email, recipient_list=[email], message=body, fail_silently=False)
-
-    #context = {
-        #'form':form,
-    #}
-    #template = 'newsletter/unsubscribe.html'
-    #return render(request, template, context)
-
 
