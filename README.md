@@ -27,7 +27,7 @@ Bitte stelle sicher, dass folgende Programme installiert sind:
 <b>Gehe folgendermaßen vor, um Utility zu starten:</b>
 <ul>
 <li> Navigiere dich mithilfe in der Konsole in den Ordner, in welchem du das Projekt Utility anlegen möchtest </li>
-<li> Starte deine virtuelle Umgebung und installiere dort Django und Pip </li>
+<li> Installiere und starte deine virtuelle Umgebung und installiere in dieser Django und Pip </li>
 <li> Clone das Utility GitHub Repository nun mit Hilfe von git clone und des GitHub Links </li>
 <li> Installiere mit pip install -r requirements.txt alle benötigten Komponenten für Utility </li>
 <li> Lege in dem Vezeichnis, in welchem auch die Datei settings.py liegt, eine local_settings.py an </li>
