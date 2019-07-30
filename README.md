@@ -31,7 +31,7 @@ Bitte stelle sicher, dass folgende Programme installiert sind:
 <li> Clone das Utility GitHub Repository nun mit Hilfe von git clone und des GitHub Links </li>
 <li> Installiere mit pip install -r requirements.txt alle benötigten Komponenten für Utility </li>
 <li> Lege in dem Vezeichnis, in welchem auch die Datei settings.py liegt, eine local_settings.py an </li>
-<li> Wenn du über den Newsletter E-Mails verschicken möchtest, trage in die local_settings.py den EMAIL_HOST, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_PORT und EMAIL_USE_TLS für deinen Newsletter ein
+<li> Wenn du über den Newsletter E-Mails verschicken möchtest, trage in die local_settings.py den EMAIL_HOST, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_PORT und EMAIL_USE_TLS für deinen Newsletter ein, andernfalls kann die local_settings.py Datei leer bleiben
 <li> Führe anschließend mit python manage.py makemigrations und migrate eine Migration der App durch </li>
 <li> Erstelle mit createsuperuser einen user, welcher im Folgenden die Admin Funktionen erhält </li>
 </ul>
