@@ -20,7 +20,6 @@ Bei der Verwendung von Utility, startet ihr ein neues Projekt mit folgenden Funk
 Bitte stelle sicher, dass folgende Programme installiert sind:
 <ul>
   <li> Python 3 </li>
-  <li> Sqlite </li>
 </ul>
 
 <br>
