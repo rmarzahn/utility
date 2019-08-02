@@ -30,7 +30,7 @@ Bitte stelle sicher, dass folgende Programme installiert sind:
   <li> Starte deine virtuelle Umgebung und installiere in dieser mit Phython Pip mit <i>-m pip install --upgrade pip</i></li>
   <li> Clone das Utility GitHub Repository nun mit Hilfe von <i>git clone [URL zum Repository]</i></li>
   <li> Navigiere dich in den Ordner <i>utility</i> und installiere mit <i> pip install -r requirements.txt </i> alle benötigten Komponenten für Utility </li>
-  <li> Lege in dem Vezeichnis, in welchem auch die Datei settings.py liegt, eine <i>local_settings.py</i> an </li>
+  <li> Navigiere dich innerhalb des Ordners <i>utility</i> in das Verzeichnis <i>utility</i>, in welchem auch die Datei settings.py liegt, und lege eine <i>local_settings.py</i> an </li>
   <li> Wenn du über den Newsletter E-Mails verschicken möchtest, trage in die local_settings.py den <i>EMAIL_HOST, EMAIL_HOST_USER,      EMAIL_HOST_PASSWORD, EMAIL_PORT</i> und <i>EMAIL_USE_TLS</i> für deinen Newsletter ein, andernfalls kann die local_settings.py Datei leer bleiben
   <li> Führe anschließend mit <i>python manage.py makemigrations</i> und <i>python manage.py migrate</i> eine Migration der App durch </li>
   <li> Erstelle mit <i> python manage.py createsuperuser </i> einen Superuser, welcher im Folgenden die Admin Funktionen erhält </li>
