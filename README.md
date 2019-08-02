@@ -27,7 +27,7 @@ Bitte stelle sicher, dass folgende Programme installiert sind:
 <ul>
   <li> Navigiere dich in der Konsole in den Ordner, in welchem du das Projekt Utility anlegen möchtest </li>
   <li> Installiere mit Python <i> -m venv myvenv</i> eine virtuelle Umgebung </li>
-  <li> Starte deine virtuelle Umgebung und installiere in dieser Pip mit <i>-m pip install --upgrade pip</i></li>
+  <li> Starte deine virtuelle Umgebung und installiere in dieser mit Phython Pip mit <i>-m pip install --upgrade pip</i></li>
   <li> Clone das Utility GitHub Repository nun mit Hilfe von <i>git clone [URL zum Repository]</i></li>
   <li> Installiere mit <i> pip install -r requirements.txt </i> alle benötigten Komponenten für Utility </li>
   <li> Lege in dem Vezeichnis, in welchem auch die Datei settings.py liegt, eine <i>local_settings.py</i> an </li>
